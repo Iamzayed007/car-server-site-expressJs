@@ -11,14 +11,14 @@ const port = process.env.PORT || 5000;
 // process.env.FIREBASE_SERVICE_ACCOUNT
 
 
-const firebaseToken = (process.env.FIREBASE_SERVICE_ACCOUNT)
-console.log(firebaseToken)
+// const firebaseToken = (process.env.FIREBASE_SERVICE_ACCOUNT)
+// console.log(firebaseToken)
 // const serviceAccount = require(process.env.FIREBASE_SERVICE_ACCOUNT);
-// const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
+const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
 // console.log(serviceAccount)
-// admin.initializeApp({
-//     credential: admin.credential.cert(serviceAccount)
-// });
+admin.initializeApp({
+    credential: admin.credential.cert(serviceAccount)
+});
 
 app.use(cors());
 app.use(express.json());
